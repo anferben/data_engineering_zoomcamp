@@ -1,0 +1,8 @@
+# Running the postgres server in a docker:
+docker run -it -e POSTGRES_USER="root" -e POSTGRES_PASSWORD="root" -e POSTGRES_DB="ny_taxi" -v $(pwd)/ny_taxi_postgres_data:/home/andres/projects/data_engineering -p 5432:5432 postgres:13
+
+# Conecting to db:
+pgcli -h localhost -p 5432 -u root -d ny_taxi
+
+# Data source
+https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page
